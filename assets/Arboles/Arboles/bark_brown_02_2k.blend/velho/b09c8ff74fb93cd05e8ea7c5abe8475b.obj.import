@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://beh7yp0uvtsum"
+path="res://.godot/imported/b09c8ff74fb93cd05e8ea7c5abe8475b.obj-c38057aef687213cce29521864f361ad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/b09c8ff74fb93cd05e8ea7c5abe8475b.obj-c38057aef687213cce29521864f361ad.mesh"]
+
+source_file="res://assets/Arboles/Arboles/bark_brown_02_2k.blend/velho/b09c8ff74fb93cd05e8ea7c5abe8475b.obj"
+dest_files=["res://.godot/imported/b09c8ff74fb93cd05e8ea7c5abe8475b.obj-c38057aef687213cce29521864f361ad.mesh", "res://.godot/imported/b09c8ff74fb93cd05e8ea7c5abe8475b.obj-c38057aef687213cce29521864f361ad.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
