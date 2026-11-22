@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://c762nv8wkt48e"]
+
+[sub_resource type="GDScript" id="GDScript_wrbjf"]
+resource_name = "main_menu.gd"
+script/source = "extends Control
+
+# Caminho para a cena principal do teu jogo (onde está a casa, o jogador e o monstro)
+@export_file(\"*.tscn\") var game_scene_path: String = \"res://cena_principal.tscn\" # Altera para o nome exato da tua cena de jogo
+
+@onready var btn_play: Button = $VBoxContainer/BtnPlay
+@onready var btn_quit: Button = $VBoxContainer/BtnQuit
+
+func _ready() -> void:
+	# Certifica-te de que o rato fica visível e destravado no menu principal
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	# Conecta os sinais dos botões via código de forma segura
+	if btn_play:
+		btn_play.pressed.connect(_on_play_pressed)
+	if btn_quit:
+		btn_quit.pressed.connect(_on_quit_pressed)
+
+func _on_play_pressed() -> void:
+	print(\"DEBUG: A carregar o jogo...\")
+	# Muda para a cena principal do jogo
+	var error = get_tree().change_scene_to_file(game_scene_path)
+	if error != OK:
+		print(\"ERRO: Não foi possível carregar a cena do jogo em: \", game_scene_path)
+
+func _on_quit_pressed() -> void:
+	print(\"DEBUG: A sair do jogo.\")
+	get_tree().quit()
+"
+
+[node name="Node3D" type="Node3D" unique_id=1579257993]
+
+[node name="MainMenu" type="Control" parent="." unique_id=69237121]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_wrbjf")
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu" unique_id=1349999988]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 139.0
+offset_right = 329.0
+offset_bottom = 179.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/ColorRect" unique_id=1205950441]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BtnPlay" type="Button" parent="MainMenu/ColorRect/VBoxContainer" unique_id=1418260288]
+layout_mode = 2
+text = "JOGAR"
+
+[node name="BtnQuit" type="Button" parent="MainMenu/ColorRect/VBoxContainer" unique_id=481832355]
+layout_mode = 2
+text = "SAIR"
